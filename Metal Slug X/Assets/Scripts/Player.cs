@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Unity.Burst.Intrinsics.Arm;
 
 public class Player : MonoBehaviour
 {
@@ -52,6 +53,17 @@ public class Player : MonoBehaviour
 
             transform.Translate(-Time.deltaTime * 5, 0, 0);
             transform.localScale = new Vector3(-1F, 1F, 1F);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //if (nen)
+            //{
+
+            rigidbody2d.AddForce(new Vector2(0, 400));
+                //nen = false;
+            //}
+
         }
 
     }
